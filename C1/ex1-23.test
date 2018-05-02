@@ -1,0 +1,41 @@
+/* some "quoted strings" not sure why? also lets move to next line
+that should not casue problems and /* start inside the commnet! how about that! */
+
+#include <stdio.h>
+
+#define OUT 0
+#define IN 1
+#define MAXLINE 1000
+
+int getline(char s[], int lim);
+int iscommentin(char s[], int index);
+int iscommentout(char s[], int index);
+/* some comment */
+/* some more commment*/
+int main()
+{
+	char line[MAXLINE]; /* comments */
+	int state, len, i;
+
+	state = OUT;
+	while ((len = getline(line, MAXLINE)) > 0/*comment inside the code, crazy!*/ )
+		for (i=0; i<len; ++i) {
+			if (state == OUT) {
+				if (iscommentin(line, i) > 0) {
+					state = IN;
+					++i;
+				}
+			}
+			else
+				if (iscommentout(line, i) > 0) {
+					state = OUT;
+					i = i+2;
+				}
+			if (state == OUT)
+				putchar(line[i]);
+		}
+	printf("%d", state);
+
+
+
+}

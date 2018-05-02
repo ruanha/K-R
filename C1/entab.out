@@ -1,0 +1,8 @@
+Some tests for the entab.c program
+
+letter followed by two spaces+tab, then a letter:
+a	a
+letter followed by alot of spaces, then a letter:
+a										 a
+some crazy mix:
+a							a				a	 a			a	a
