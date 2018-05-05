@@ -13,9 +13,13 @@ int main()
 {
 	char t[] = "here is a tab directly after the word	. How did that\nlook?";
 	char s[strlen(t)*2];
+	char s[strlen(t)];
 
 	escape(t, s);
 	printf("s: %s\n", s);
+
+	revescape(s, u);
+	printf("u: %s\n", u);
 
 }
 
@@ -25,7 +29,6 @@ int escape(char t[], char s[])
 {
 	int i, j;
 
-	i = 0;
 	for (i=0, j=0; i<strlen(t); i++, j++) {
 		switch (t[i]) {
 			case '\t':
@@ -47,7 +50,10 @@ int escape(char t[], char s[])
 }
 
 /* reverse of escape */
-int revescape(char t[], char s[])
+int revescape(char s[], char u[])
 {
+	int i, j;
 
+	i=0;
+	for (i=0, j=0; i<strlen(t); i++, j++)
 }

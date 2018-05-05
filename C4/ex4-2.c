@@ -2,10 +2,8 @@
 
 #define MAXLINE 100
 
-//double kr_atof(char s[]);
-
 /* rudimentary calculator */
-int main( )
+int main(void)
 {
 	double sum, kr_atof(char []);
 	char line[MAXLINE];
